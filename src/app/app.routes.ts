@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { MapComponent } from './map/map.component';
+import { MapComponent } from './components/map/map.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/map', pathMatch: 'full' }, // index route

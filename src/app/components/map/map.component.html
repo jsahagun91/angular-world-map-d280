@@ -1,0 +1,15 @@
+<div class="map-container">
+    <app-navbar text="World Map"></app-navbar>
+    <div class="row">
+        <div class="column map-column">
+            <mat-icon
+              svgIcon="map_icon"
+              class="map-svg"
+              (click)="mapPathClick($event)"
+              (mouseover)="mapPathHover($event)"
+              (mouseout)="mapPathLeave($event)"
+              >
+            </mat-icon>
+        </div>
+    </div>
+</div>
