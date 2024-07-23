@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CardComponent } from "../card/card.component";
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
@@ -9,11 +10,18 @@ import { WorldbankService } from '../../worldbank.service';
 @Component({
   selector: 'app-map',
   standalone: true,
-  imports: [NavbarComponent, MatIconModule, CardComponent],
+  imports: [CommonModule,NavbarComponent, MatIconModule, CardComponent],
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
 export class MapComponent {
+
+  countryClicked: boolean = false;
+
+  onCountryClick() {
+    this.countryClicked = true;
+  }
+
   countryName: string = '';
   region: string = '';
   incomeLevel = '';
@@ -57,6 +65,7 @@ export class MapComponent {
       const countryName = target.id;
 
       this.worldbankService.getCountryInfo(countryName).subscribe(
+
         (response: any) => {
           if (
             Array.isArray(response) &&
@@ -83,5 +92,7 @@ export class MapComponent {
         }
       );
     }
+    this.onCountryClick();
+
   }
 }

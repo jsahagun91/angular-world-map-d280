@@ -1,11 +1,11 @@
 <div class="map-container">
-    <app-navbar text="World Map"></app-navbar>
+    <app-navbar text="🗺️ MAP"></app-navbar>
     <div class="row">
         <div class="column map-column">
             <mat-icon
               svgIcon="map_icon"
               class="map-svg"
-              (click)="mapPathClick($event)"
+              (click)="mapPathClick($event); onCountryClick()"
               (mouseover)="mapPathHover($event)"
               (mouseout)="mapPathLeave($event)"
               >
@@ -13,6 +13,7 @@
         </div>
         <div class="column info-column">
             <h2 class="info-column-header">Country Data</h2>
+            <p *ngIf="!countryClicked" class="click-prompt">Click on countries for data</p>
             <div class="info-container">
                 <app-card countryData="COUNTRY" [customText]="countryName"></app-card>
                 <app-card countryData="REGION" [customText]="region"></app-card>
@@ -21,6 +22,7 @@
                 <app-card countryData="LATITUDE" [customText]="latitude"></app-card>
             </div>
             <p class="citation-container">Powered By <span>The World Bank</span></p>
+            
         </div>
     </div>
 </div>
