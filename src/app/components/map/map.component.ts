@@ -10,7 +10,7 @@ import { WorldbankService } from '../../worldbank.service';
   standalone: true,
   imports: [NavbarComponent, MatIconModule],
   templateUrl: './map.component.html',
-  styleUrl: './map.component.css'
+  styleUrls: ['./map.component.css']
 })
 export class MapComponent {
   countryName: string = '';
@@ -25,11 +25,11 @@ export class MapComponent {
     private domSanitizer: DomSanitizer,
     private http: HttpClient 
   ) {
-
+    // Registering the SVG icon for the map
     this.matIconRegistry.addSvgIcon(
       'map_icon',
-      this.domSanitizer.bypassSecurityTrustUrl(
-        '../../../assets/images/map-image.svg'
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        'assets/images/map-image.svg'
       )
     );
   }
