@@ -1,3 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Titillium Web", sans-serif;
+    color: black
 }
+
+path:hover {
+    cursor: pointer;
+    stroke: black;
+    stroke-width: 2px; 
+}
+

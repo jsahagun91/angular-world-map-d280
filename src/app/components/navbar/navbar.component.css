@@ -1,4 +1,14 @@
 .navbar-container {
-    color: red;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-heading {
+    color: black;
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 

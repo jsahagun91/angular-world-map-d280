@@ -1,0 +1,17 @@
+.card-container {
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.label-text {
+    color: black;
+    font-weight: bold;
+    margin: 15px
+}
+
+.label-info {
+    color:black;
+}

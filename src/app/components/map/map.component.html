@@ -11,6 +11,16 @@
               >
             </mat-icon>
         </div>
+        <div class="column info-column">
+            <h2 class="info-column-header">Country Data</h2>
+            <div class="info-container">
+                <app-card countryData="COUNTRY" [customText]="countryName"></app-card>
+                <app-card countryData="REGION" [customText]="region"></app-card>
+                <app-card countryData="INCOME" [customText]="incomeLevel"></app-card>
+                <app-card countryData="LONGITUDE" [customText]="longitude"></app-card>
+                <app-card countryData="LATITUDE" [customText]="latitude"></app-card>
+            </div>
+            <p class="citation-container">Powered By <span>The World Bank</span></p>
+        </div>
     </div>
 </div>
-<p>Hello</p>

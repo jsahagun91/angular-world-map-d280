@@ -1,4 +1,66 @@
 .map-container {
-    background: red;
-    
+    background: rgb(255, 165, 0);
+    background: linear-gradient(
+      180deg,
+      rgb(255, 200, 0) 0%,
+      rgb(255, 100, 0) 100%
+    );
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.map-column {
+    width: 80vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-column {
+    border-left: 1px solid black;
+    width: 20vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.map-svg {
+    width: 98%;
+    height: 98%;
+    fill: white;
+    filter: drop-shadow(1px 1px 1px rgba(1, 1, 1, 1));
+    transition: fill 0.3s ease;
+  }
+
+
+.info-column-header  {
+    color: black;
+    padding: 2rem;
+}
+
+.info-container {
+    border: 1px solid black;
+    width: 90%;
+    min-height: 30%;
+}
+
+span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.citation-container {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
 }

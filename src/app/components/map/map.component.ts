@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { CardComponent } from "../card/card.component";
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
@@ -8,7 +9,7 @@ import { WorldbankService } from '../../worldbank.service';
 @Component({
   selector: 'app-map',
   standalone: true,
-  imports: [NavbarComponent, MatIconModule],
+  imports: [NavbarComponent, MatIconModule, CardComponent],
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
@@ -25,11 +26,11 @@ export class MapComponent {
     private domSanitizer: DomSanitizer,
     private http: HttpClient 
   ) {
-    // Registering the SVG icon for the map
+
     this.matIconRegistry.addSvgIcon(
       'map_icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/images/map-image.svg'
+        '../../../assets/images/map-image.svg'
       )
     );
   }
@@ -39,6 +40,8 @@ export class MapComponent {
     if (target && target.nodeName === 'path') {
       target.style.fill = 'orange';
     }
+    // Test hover
+    console.log('hover')
   }
 
   mapPathLeave(event: MouseEvent) {
@@ -68,6 +71,9 @@ export class MapComponent {
             this.incomeLevel = countryData.incomeLevel.value;
             this.longitude = countryData.longitude;
             this.latitude = countryData.latitude;
+            // test countryName on click
+            console.log(this.countryName)
+            console.log(this.region)
           } else {
             console.warn('API response is not as expected:', response);
           }
