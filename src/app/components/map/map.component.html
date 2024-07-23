@@ -16,6 +16,7 @@
             <p *ngIf="!countryClicked" class="click-prompt">Click on countries for data</p>
             <div class="info-container">
                 <app-card countryData="COUNTRY" [customText]="countryName"></app-card>
+                <app-card countryData="CAPITAL" [customText]="capitalCity"></app-card>
                 <app-card countryData="REGION" [customText]="region"></app-card>
                 <app-card countryData="INCOME" [customText]="incomeLevel"></app-card>
                 <app-card countryData="LONGITUDE" [customText]="longitude"></app-card>

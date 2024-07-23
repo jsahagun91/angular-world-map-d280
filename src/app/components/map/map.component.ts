@@ -23,6 +23,7 @@ export class MapComponent {
   }
 
   countryName: string = '';
+  capitalCity: string = '';
   region: string = '';
   incomeLevel = '';
   longitude: string = '';
@@ -76,13 +77,13 @@ export class MapComponent {
             const countryData = response[1][0];
 
             this.countryName = countryData.name;
+            this.capitalCity = countryData.capitalCity;
             this.region = countryData.region.value;
             this.incomeLevel = countryData.incomeLevel.value;
             this.longitude = countryData.longitude;
             this.latitude = countryData.latitude;
-            // test countryName on click
-            console.log(this.countryName)
-            console.log(this.region)
+            
+            console.log(response)
           } else {
             console.warn('API response is not as expected:', response);
           }
