@@ -50,7 +50,7 @@ export class MapComponent {
       target.style.fill = 'orange';
     }
     // Test hover
-    console.log('hover')
+    // console.log('hover')
   }
 
   mapPathLeave(event: MouseEvent) {
@@ -76,6 +76,8 @@ export class MapComponent {
           ) {
             const countryData = response[1][0];
 
+            console.log(response)
+
             this.countryName = countryData.name;
             this.capitalCity = countryData.capitalCity;
             this.region = countryData.region.value;
@@ -83,7 +85,6 @@ export class MapComponent {
             this.longitude = countryData.longitude;
             this.latitude = countryData.latitude;
             
-            console.log(response)
           } else {
             console.warn('API response is not as expected:', response);
           }
