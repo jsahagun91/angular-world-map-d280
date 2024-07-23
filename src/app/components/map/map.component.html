@@ -13,7 +13,10 @@
         </div>
         <div class="column info-column">
             <h2 class="info-column-header">Country Data</h2>
+
+            <!-- instructions are removed when a country is clicked -->
             <p *ngIf="!countryClicked" class="click-prompt">Click on countries for data</p>
+            
             <div class="info-container">
                 <app-card countryData="COUNTRY" [customText]="countryName"></app-card>
                 <app-card countryData="CAPITAL" [customText]="capitalCity"></app-card>

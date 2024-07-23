@@ -44,6 +44,7 @@ export class MapComponent {
     );
   }
 
+  // Fill path orange upon hover
   mapPathHover(event: MouseEvent) {
     const target = event.target as SVGElement;
     if (target && target.nodeName === 'path') {
@@ -53,6 +54,7 @@ export class MapComponent {
     // console.log('hover')
   }
 
+  // When mouse leaves fill path back to white
   mapPathLeave(event: MouseEvent) {
     const target = event.target as SVGElement;
     if (target && target.nodeName === 'path') {
@@ -60,6 +62,7 @@ export class MapComponent {
     }
   }
 
+  // Call api when clicked
   mapPathClick(event: MouseEvent) {
     const target = event.target as SVGElement;
     if (target && target.nodeName === 'path') {
@@ -94,6 +97,7 @@ export class MapComponent {
         }
       );
     }
+     // Call function to remove instructions
     this.onCountryClick();
 
   }
